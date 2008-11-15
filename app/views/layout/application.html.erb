@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+  <head>
+    <title>Vim Tips on Twitter</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+  </head>
+  <body>
+    <%#= message[:notice] %>
+    <div id="header">
+      <div id="nav">
+        <ul>
+          <li><a href="/tips">List</a></li>
+          <li><a href="/tips/new">New</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="center">
+      <%= catch_content :for_layout %>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>

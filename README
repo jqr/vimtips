@@ -1,0 +1,12 @@
+This is a Merb app being used privately to build a database of Vim tips
+that are 140 characters or less in length.  The tips will then be posted
+to Twitter daily.
+
+It's quite boring, at the moment.  One resource (model, controller,
+view set).  A few lines of jQuery-ified javascript.  
+
+At some point, we would like to flesh this out and get it deploy it as
+a site that actually lists all of the tweeted Vim tips in a
+user-friendly manner.  Thankfully, that won't take much time at all.
+
+At the moment, though, we're busy entering tips!

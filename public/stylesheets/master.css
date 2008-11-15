@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 100%;
+  background-color: #fff;
+  color: #666;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+html {
+  height: 100%;
+  margin-bottom: 1px;
+}
+#header {
+  height: 2.5em;
+  background-color: #000;
+}
+  #header #nav {
+    margin: 0 auto;
+    width: 600px;
+  }
+  #header #nav ul {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+    #header #nav ul li {
+      list-style: none;
+      display: inline;
+    }
+      #header #nav ul li a {
+        color: #4cbb17;
+        padding: 1em;
+        background-color: #000;
+        text-decoration: none;
+      }
+      #header #nav ul li a:hover {
+        background-color: #000;
+        border-bottom: 5px solid #4cbb17;
+      }
+
+
+#center {
+  margin: 0 auto;
+  width: 600px;
+}
+h1 {
+  font-size: 2em;
+  background-color: #fff;
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: 300;
+  padding: 0.2em;
+}
+h2 {
+  font-size: 1.5em;
+  padding: 0.2em;
+  color: #999;
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: 300;
+  background-color: #fff;
+}
+h3 {
+  font-size: 1.3em;
+  text-align: left;
+  font-weight: 300;
+  padding: 0.2em;
+}
+
+p {
+  background-color: #fff;
+  padding: 0.2em;
+}
+a {
+  color: #4cbb17;
+  background-color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #000;
+  background-color: #fff;
+  text-decoration: underline;
+}
+#list {
+  border-top: 1px solid #999;
+}
+li span.actions a {
+  margin-left: 0.5em;
+}
+
+/* FORMS */
+.formContainer form {
+  border-top: 1px solid #999;
+  padding: 10px;
+}
+.formContainer .submitContainer {
+    margin: 0 auto;
+    height: 30px;
+    width: 13em;
+}
+input, select {
+    font-size: 90%;
+}
+.formContainer label {
+    display: block;
+    float: left;
+    width: 10em;
+    text-align: right;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+.formContainer p {
+    clear: both;
+}
+input[type="text"],
+input.text,
+textarea {
+    border: 1px solid black;
+    border-color: #4cbb17;
+    color: #333;
+}
+input:focus,
+textarea:focus,
+input.focus,
+textarea.focus {
+    border-color: #000;
+}

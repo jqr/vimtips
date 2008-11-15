@@ -1,0 +1,10 @@
+<h1>Tips</h1>
+<div id="list">
+  <h2>There are <%= @tips.count %> tips so far!  Go <%= link_to 'create a new one', resource(:tips, :new) %>!</h2>
+
+  <ul>
+    <% @tips.each do |t| %>
+      <li><%= t.body %><span class="actions"><%= link_to 'edit', resource(t, :edit) %></span></li>
+    <% end %>
+  </ul>
+</div>
