@@ -3,7 +3,7 @@
   <h2>There are <%= @tips.count %> tips so far!  Go <%= link_to 'create a new one', resource(:tips, :new) %>!</h2>
 
   <ul>
-    <% @tips.each do |t| %>
+    <% @tips.reverse.each do |t| %>
       <li><span class="tips"><%= t.body %></span><span class="actions"><%= link_to 'edit', resource(t, :edit) %></span></li>
     <% end %>
   </ul>
