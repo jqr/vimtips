@@ -29,10 +29,13 @@ html {
     #header #nav ul li {
       list-style: none;
       display: inline;
+      float: left;
+      margin-top: 0.5em;
+      padding: 0 0.5em;
     }
       #header #nav ul li a {
+        padding: 0.5em 0.3em;
         color: #4cbb17;
-        padding: 1em;
         background-color: #000;
         text-decoration: none;
       }
@@ -85,9 +88,19 @@ a:hover {
 #list {
   border-top: 1px solid #999;
 }
-li span.actions a {
-  margin-left: 0.5em;
-}
+  #list ul li {
+    list-style-type: decimal;
+    padding: 1em;
+    margin: 0.3em;
+    background-color: #ddd;
+  }
+
+    #list ul li span.actions a {
+      background-color: #ddd;
+      vertical-align: middle;
+      float: right;
+      margin-top: -1.3em;
+    }
 
 /* FORMS */
 .formContainer form {
