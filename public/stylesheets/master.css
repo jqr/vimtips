@@ -94,7 +94,9 @@ a:hover {
     margin: 0.3em;
     background-color: #ddd;
   }
-
+    #list ul li span.tips {
+      padding-right: 3em;
+    }
     #list ul li span.actions a {
       background-color: #ddd;
       vertical-align: middle;
