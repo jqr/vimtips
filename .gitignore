@@ -11,3 +11,4 @@ src/*
 .hgignore
 .hg/*
 .svn/*
+.users
