@@ -12,8 +12,8 @@
     <div id="header">
       <div id="nav">
         <ul>
-          <li><a href="/tips">List</a></li>
-          <li><a href="/tips/new">New</a></li>
+          <li><%= link_to('List', resource(:tips)) %></li>
+          <li><%= link_to('New', resource(:tips, :new)) %></li>
         </ul>
       </div>
     </div>
