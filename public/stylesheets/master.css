@@ -85,23 +85,27 @@ a:hover {
   background-color: #fff;
   text-decoration: underline;
 }
-#list {
+#tipList {
   border-top: 1px solid #999;
 }
-  #list ul li {
+  #tipList ul li {
     list-style-type: decimal;
     padding: 1em;
     margin: 0.3em;
     background-color: #ddd;
   }
-    #list ul li span.tips {
+    #tipList ul li span.tips {
       padding-right: 3em;
     }
-    #list ul li span.actions a {
+    #tipList ul li span.actions a {
+      color: #aaa;
       background-color: #ddd;
       vertical-align: middle;
       float: right;
       margin-top: -1.3em;
+    }
+    #tipList ul li:hover span.actions a {
+      color: #4cbb17;
     }
 
 /* FORMS */
