@@ -4,7 +4,7 @@
 
   <ul>
     <% @tips.reverse.each do |t| %>
-      <li><span class="tips"><%= t.body %></span><span class="actions"><%= link_to 'edit', resource(t, :edit) %></span></li>
+      <li><span class="tips"><%= t.body %></span><span class="actions"><%= link_to '[edit]', resource(t, :edit) %></span></li>
     <% end %>
   </ul>
 </div>
