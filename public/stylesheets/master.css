@@ -89,6 +89,7 @@ a:hover {
   border-top: 1px solid #999;
 }
   #tipList ul li {
+    font-family: monospace;
     list-style-type: decimal;
     padding: 1em;
     margin: 0.3em;
