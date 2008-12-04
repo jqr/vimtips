@@ -12,3 +12,4 @@ src/*
 .hg/*
 .svn/*
 .users
+config/twitter.yml
