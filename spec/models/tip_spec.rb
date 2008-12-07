@@ -3,6 +3,51 @@ require File.join( File.dirname(__FILE__), '..', "spec_helper" )
 describe Tip do
 
   before(:each) do
+    3.times { Tip.gen }
+    3.times { Tip.gen(:tweeted_at => Time.now) }
+
+    @tweet = mock(Twitter::Base, :post => true)
+    Twitter::Base.stub!(:new).and_return(@tweet)
+  end
+
+  it "should have a non-empty collection of tips" do
+    Tip.all.should_not be_empty
+  end
+
+  it "should return untweeted tips on :untweeted" do
+    Tip.untweeted.each do |t|
+      t.tweeted_at.should == nil
+    end
+  end
+
+  it "should return tweeted tips on :tweeted" do
+    Tip.tweeted.each do |t|
+      t.tweeted_at.should_not == nil
+    end
+  end
+
+  it "should return a random untweeted tip on :random_tip" do
+    t = Tip.random_tip
+    t.class.should == Tip
+    t.tweeted_at.should == nil
+  end
+
+  it "should be tweeted on :tweet" do
+    Twitter::Base.should_receive(:new).and_return(@tweet)
+    @tweet.should_receive(:post).and_return(true)
+    Tip.tweet
+  end
+  
+  it "should return an array of 2 strings on :get_twitter_info" do
+    result = Tip.get_twitter_info
+    result.class.should == Array
+    result[0].class.should == String
+  end
+end
+
+describe Tip, "instance" do
+
+  before(:each) do
     @tip = Tip.new
   end
 
@@ -17,4 +62,5 @@ describe Tip do
     141.times { |x| @tip.body += 'x' }
     @tip.should_not be_valid
   end
+
 end
