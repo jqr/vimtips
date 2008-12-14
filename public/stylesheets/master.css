@@ -134,6 +134,7 @@ input, select {
     clear: both;
 }
 input[type="text"],
+input[type="password"],
 input.text,
 textarea {
     border: 1px solid black;

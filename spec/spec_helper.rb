@@ -21,3 +21,23 @@ Spec::Runner.configure do |config|
   config.include(Merb::Test::RouteHelper)
   config.include(Merb::Test::ControllerHelper)
 end
+
+Merb::Test.add_helpers do
+
+  def create_default_user
+    unless User.first(:login => "kilgore_trout")
+      User.create(:login => "kilgore_trout", :password => "2BR02B",:password_confirmation => "2BR02B") or raise "can't create user"
+    end
+  end
+
+  def login
+    create_default_user
+    request("/login", {
+      :method => "PUT",
+      :params => {
+        :login => "kilgore_trout",
+        :password => "2BR02B"
+      }
+    })
+  end
+end

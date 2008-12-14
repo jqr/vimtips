@@ -27,13 +27,17 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
-  resources :tips
   # RESTful routes
   # resources :posts
-  resources :tips
+  resources :tips do
+    collection :tweeted, :to => "tweeted"
+    collection :untweeted, :to => "untweeted"
+  end
+
+  match("/tweeted(/:year)(/:month)(/:day)").to(:controller => "tips", :action => "tweeted")
 
   # Adds the required routes for merb-auth using the password slice
-#  slice(:merb_auth_slice_password, :name_prefix => nil, :path_prefix => "")
+  slice(:merb_auth_slice_password, :name_prefix => nil, :path_prefix => "")
 
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based

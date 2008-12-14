@@ -10,6 +10,7 @@ describe "resource(:tips)" do
   describe "GET" do
 
     before(:each) do
+      login
       @response = request(resource(:tips))
     end
 
