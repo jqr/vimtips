@@ -1,0 +1,10 @@
+<h1>Tweeted Tips</h1>
+<div id="tipList">
+  <h2><%= @tips.size %> tips have been tweeted to date.</h2>
+
+  <ul>
+    <% @tips.each do |t| %>
+      <li><span class="tips"><%= t.body %></span></li>
+    <% end %>
+  </ul>
+</div>

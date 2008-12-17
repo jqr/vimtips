@@ -12,8 +12,13 @@
     <div id="header">
       <div id="nav">
         <ul>
-          <li><%= link_to('List', resource(:tips)) %></li>
-          <li><%= link_to('New', resource(:tips, :new)) %></li>
+          <li><%= link_to('Tweeted', url(:tweeted)) %></li>
+          <% unless session.user.nil? %>
+            <li><%= link_to('Untweeted', resource(:tips, :untweeted)) %></li>
+            <li><%= link_to('All', resource(:tips)) %></li>
+            <li><%= link_to('New', resource(:tips, :new)) %></li>
+            <li><%= link_to('Logout', '/logout') %></li>
+          <% end %>
         </ul>
       </div>
     </div>

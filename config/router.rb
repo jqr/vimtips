@@ -34,7 +34,7 @@ Merb::Router.prepare do
     collection :untweeted, :to => "untweeted"
   end
 
-  match("/tweeted(/:year)(/:month)(/:day)").to(:controller => "tips", :action => "tweeted")
+  match("/tweeted(/:year(/:month(/:day)))").to(:controller => "tips", :action => "tweeted").name(:tweeted)
 
   # Adds the required routes for merb-auth using the password slice
   slice(:merb_auth_slice_password, :name_prefix => nil, :path_prefix => "")

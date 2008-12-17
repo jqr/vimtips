@@ -1,9 +1,28 @@
 class Tips < Application
   # provides :xml, :yaml, :js
 
+  before :ensure_authenticated, :exclude => :tweeted
+
   def index
     @tips = Tip.all
     display @tips
+  end
+
+  def tweeted
+    @tips = Tip.tweeted
+    @tips = @tips.select { |t| t.tweeted_at.year == params[:year].to_i } if params[:year]
+    @tips = @tips.select { |t| t.tweeted_at.year == params[:year].to_i && t.tweeted_at.month == params[:month].to_i } if params[:month]
+    @tips = @tips.select do |t| 
+      t.tweeted_at.year == params[:year].to_i && 
+        t.tweeted_at.month == params[:month].to_i &&
+        t.tweeted_at.day == params[:day].to_i 
+    end if params[:day]
+    display @tips
+  end
+
+  def untweeted
+    @tips = Tip.untweeted
+    render @tips, :template => 'tips/index'
   end
 
   def show(id)

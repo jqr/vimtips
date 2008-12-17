@@ -7,7 +7,7 @@ class Tip
   property :tweeted_at, DateTime
 
   def self.tweeted
-    all(:tweeted_at.not => nil)
+    all(:tweeted_at.not => nil, :order => [:tweeted_at.desc])
   end
 
   def self.untweeted
