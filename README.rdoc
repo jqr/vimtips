@@ -1,3 +1,5 @@
+= Vim tips
+
 This is a Merb app being used privately to build a database of Vim tips
 that are 140 characters or less in length.  The tips will then be posted
 to Twitter daily.
@@ -10,3 +12,10 @@ a site that actually lists all of the tweeted Vim tips in a
 user-friendly manner.  Thankfully, that won't take much time at all.
 
 At the moment, though, we're busy entering tips!
+
+
+== Setup
+
+  gem install merb-more dm-sweatshop webrat
+  gem install (some datamapper stuff!)
+  
