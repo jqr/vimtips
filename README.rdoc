@@ -19,3 +19,7 @@ At the moment, though, we're busy entering tips!
   gem install merb-more dm-sweatshop webrat
   gem install (some datamapper stuff!)
   
+== Running Specs
+
+  MERB_ENV=test rake db:automigrate
+  rake spec
