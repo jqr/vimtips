@@ -20,7 +20,6 @@ class Tip
 
   def self.tweet
     tip = random_tip
-    twitter_user, twitter_pass = get_twitter_info
     twitter_connection.post(tip.body)
     tip.tweeted_at = Time.now
     tip.save
@@ -34,6 +33,6 @@ class Tip
   end
   
   def self.twitter_connection
-    Twitter::Base.new(twitter_user, twitter_pass)
+    Twitter::Base.new(*get_twitter_info)
   end
 end

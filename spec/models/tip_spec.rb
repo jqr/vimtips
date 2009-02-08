@@ -5,9 +5,9 @@ describe Tip do
   before(:each) do
     3.times { Tip.gen }
     3.times { Tip.gen(:tweeted_at => Time.now) }
-
-    @tweet = mock(Twitter::Base, :post => true)
-    Twitter::Base.stub!(:new).and_return(@tweet)
+    
+    @twitter_connection = mock(Twitter::Base, :post => true)
+    Tip.stub!(:twitter_connection).and_return(@twitter_connection)
   end
 
   it "should have a non-empty collection of tips" do
@@ -33,8 +33,7 @@ describe Tip do
   end
 
   it "should be tweeted on :tweet" do
-    Twitter::Base.should_receive(:new).and_return(@tweet)
-    @tweet.should_receive(:post).and_return(true)
+    @twitter_connection.should_receive(:post).and_return(true)
     Tip.tweet
   end
   
