@@ -21,7 +21,7 @@ class Tip
   def self.tweet
     tip = random_tip
     twitter_user, twitter_pass = get_twitter_info
-    Twitter::Base.new(twitter_user, twitter_pass).post(tip.body)
+    twitter_connection.post(tip.body)
     tip.tweeted_at = Time.now
     tip.save
   end
@@ -31,5 +31,9 @@ class Tip
   def self.get_twitter_info
     config = YAML.load_file("#{Merb::Config.merb_root}/config/twitter.yml")
     [config['username'], config['password']]
+  end
+  
+  def self.twitter_connection
+    Twitter::Base.new(twitter_user, twitter_pass)
   end
 end
