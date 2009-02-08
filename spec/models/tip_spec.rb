@@ -33,7 +33,7 @@ describe Tip do
   end
 
   it "should be tweeted on :tweet" do
-    @twitter_connection.should_receive(:post).and_return(true)
+    @twitter_connection.should_receive(:post)
     Tip.tweet
   end
   
